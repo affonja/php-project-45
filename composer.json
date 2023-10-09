@@ -2,9 +2,16 @@
     "name": "hexlet/code",
     "description": "hexlet php",
     "license": "MIT",
-    "bin": ["bin/brain-games"],
+    "bin": [
+        "bin/brain-games",
+        "bin/brain-even"
+    ],
     "autoload": {
-        "files": ["src/Cli.php"]
+        "files": [
+            "src/Cli.php",
+            "src/function.php"
+        ]
+
     },
     "authors": [
         {

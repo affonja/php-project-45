@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+
+<?php
+
+use function BrainGames\Even\welcome;
+use function BrainGames\Even\start_game_even;
+require "vendor/autoload.php";
+
+$name = welcome();
+start_game_even($name);
+
+
+
+
+
