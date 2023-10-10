@@ -16,7 +16,7 @@ function game_even($name): void
     line('Answer "yes" if the number is even, otherwise answer "no".');
 
     while ($count_answer < ROUND) {
-        $number = get_number();
+        $number = get_number(0,100);
         $true_answer = ($number % 2) === 0 ? 'yes' : 'no';
         $user_answer = game_round($number);
         validate_answer($true_answer, $user_answer, $name);

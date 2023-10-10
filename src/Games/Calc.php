@@ -18,8 +18,8 @@ function game_calc($name): void
     line('What is the result of the expression?');
 
     while ($count_answer < ROUND) {
-        $number1 = get_number();
-        $number2 = get_number();
+        $number1 = get_number(0,100);
+        $number2 = get_number(0,100);
         $action  = get_action();
 
         $math_string = $number1.$action.$number2;

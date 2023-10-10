@@ -9,3 +9,6 @@ game-even
 
 game-calc 
 <a href="https://asciinema.org/a/H9gyW0hlXbuDICNZJbKs9SZ3V" target="_blank"><img src="https://asciinema.org/a/H9gyW0hlXbuDICNZJbKs9SZ3V.svg" /></a>
+
+game-gcd
+<a href="https://asciinema.org/a/AWZfjuur35cIO5peXpCnogQA5" target="_blank"><img src="https://asciinema.org/a/AWZfjuur35cIO5peXpCnogQA5.svg" /></a>

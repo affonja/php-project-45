@@ -3,8 +3,8 @@
 <?php
 
 use function BrainGames\Engine\welcome;
-use function BrainGames\Even\game_even;
+use function BrainGames\Gcd\game_gcd;
 require "vendor/autoload.php";
 
 $name = welcome();
-game_even($name);
+game_gcd($name);

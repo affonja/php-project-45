@@ -16,9 +16,9 @@ function welcome(): string
     return $name;
 }
 
-function get_number(): int
+function get_number($min,$max): int
 {
-    return rand(0, 10);
+    return rand($min, $max);
 }
 
 function game_round($args): string
