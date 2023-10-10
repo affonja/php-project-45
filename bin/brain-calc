@@ -1,0 +1,10 @@
+#!/usr/bin/env php
+
+<?php
+
+use function BrainGames\Engine\welcome;
+use function BrainGames\Calc\game_calc;
+require "vendor/autoload.php";
+
+$name = welcome();
+game_calc($name);

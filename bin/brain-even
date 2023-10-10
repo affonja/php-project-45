@@ -2,14 +2,9 @@
 
 <?php
 
-use function BrainGames\Even\welcome;
-use function BrainGames\Even\start_game_even;
 require "vendor/autoload.php";
+use function BrainGames\Engine\welcome;
+use function BrainGames\Even\game_even;
 
 $name = welcome();
-start_game_even($name);
-
-
-
-
-
+game_even($name);
