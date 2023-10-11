@@ -1,0 +1,10 @@
+#!/usr/bin/env php
+
+<?php
+
+use function BrainGames\Engine\welcome;
+use function BrainGames\Progression\game_progr;
+require "vendor/autoload.php";
+
+$name = welcome();
+game_progr($name);

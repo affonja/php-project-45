@@ -33,22 +33,22 @@ function game_gcd($name): void
 
 function get_gcd(int $number1, int $number2)
 {
-    $i = 1;
+    $min_divider = 1;
     $dividers_for_number1 = [];
-    while ($i <= $number1) {
-        if ($number1 % $i === 0) {
-            $dividers_for_number1[] = $i;
+    while ($min_divider <= $number1) {
+        if ($number1 % $min_divider === 0) {
+            $dividers_for_number1[] = $min_divider;
         }
-        $i++;
+        $min_divider++;
     }
 
-    $i = 1;
+    $min_divider = 1;
     $dividers_for_number2 = [];
-    while ($i <= $number2) {
-        if ($number2 % $i === 0) {
-            $dividers_for_number2[] = $i;
+    while ($min_divider <= $number2) {
+        if ($number2 % $min_divider === 0) {
+            $dividers_for_number2[] = $min_divider;
         }
-        $i++;
+        $min_divider++;
     }
 
     $dividers_general = array_intersect($dividers_for_number1,$dividers_for_number2);

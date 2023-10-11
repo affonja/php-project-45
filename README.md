@@ -12,3 +12,6 @@ game-calc
 
 game-gcd
 <a href="https://asciinema.org/a/AWZfjuur35cIO5peXpCnogQA5" target="_blank"><img src="https://asciinema.org/a/AWZfjuur35cIO5peXpCnogQA5.svg" /></a>
+
+game-progression
+<a href="https://asciinema.org/a/cFmzIkT4Q0ihFxhUVu2yVJc9f" target="_blank"><img src="https://asciinema.org/a/cFmzIkT4Q0ihFxhUVu2yVJc9f.svg" /></a>
