@@ -15,3 +15,6 @@ game-gcd
 
 game-progression
 <a href="https://asciinema.org/a/cFmzIkT4Q0ihFxhUVu2yVJc9f" target="_blank"><img src="https://asciinema.org/a/cFmzIkT4Q0ihFxhUVu2yVJc9f.svg" /></a>
+
+game-prime
+<a href="https://asciinema.org/a/y3ZNjBscHwUK7v0ydlQokYUJz" target="_blank"><img src="https://asciinema.org/a/y3ZNjBscHwUK7v0ydlQokYUJz.svg" /></a>

@@ -2,6 +2,7 @@
 
 namespace BrainGames\Gcd;
 
+use function BrainGames\Engine\get_dividers;
 use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\welcome;
@@ -33,23 +34,8 @@ function game_gcd($name): void
 
 function get_gcd(int $number1, int $number2)
 {
-    $min_divider = 1;
-    $dividers_for_number1 = [];
-    while ($min_divider <= $number1) {
-        if ($number1 % $min_divider === 0) {
-            $dividers_for_number1[] = $min_divider;
-        }
-        $min_divider++;
-    }
-
-    $min_divider = 1;
-    $dividers_for_number2 = [];
-    while ($min_divider <= $number2) {
-        if ($number2 % $min_divider === 0) {
-            $dividers_for_number2[] = $min_divider;
-        }
-        $min_divider++;
-    }
+    $dividers_for_number1 = get_dividers($number1);
+    $dividers_for_number2 = get_dividers($number2);
 
     $dividers_general = array_intersect($dividers_for_number1,$dividers_for_number2);
     return array_pop($dividers_general);

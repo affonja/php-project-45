@@ -1,0 +1,10 @@
+#!/usr/bin/env php
+
+<?php
+
+use function BrainGames\Engine\welcome;
+use function BrainGames\Prime\game_prime;
+require "vendor/autoload.php";
+
+$name = welcome();
+game_prime($name);

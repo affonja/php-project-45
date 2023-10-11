@@ -2,7 +2,8 @@
 
 <?php
 
-use function BrainGames\Cli\welcome;
 require "vendor/autoload.php";
+use function BrainGames\Cli\welcome;
+
 
 welcome();

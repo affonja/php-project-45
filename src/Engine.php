@@ -44,3 +44,17 @@ function get_action():string
     $random = rand(0,2);
     return $action_list[$random];
 }
+
+function get_dividers($number): array
+{
+    $min_divider = 1;
+    $dividers = [];
+    while ($min_divider <= $number) {
+        if ($number % $min_divider === 0) {
+            $dividers[] = $min_divider;
+        }
+        $min_divider++;
+    }
+
+    return $dividers;
+}
