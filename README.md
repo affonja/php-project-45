@@ -1,20 +1,30 @@
+# Project Brain-Games
 
 ### Hexlet tests and linter status:
-[![Actions Status](https://github.com/affonja/php-project-45/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/affonja/php-project-45/actions)
+[![Actions Status](https://github.com/affonja/php-project-45/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/affonja/php-project-45/actions)          <a href="https://codeclimate.com/github/affonja/php-project-45/maintainability"><img src="https://api.codeclimate.com/v1/badges/1ed854fb6ef088edf01a/maintainability" /></a>
 
-<a href="https://codeclimate.com/github/affonja/php-project-45/maintainability"><img src="https://api.codeclimate.com/v1/badges/1ed854fb6ef088edf01a/maintainability" /></a>
+### About
+test project №1
 
-game-even
-<a href="https://asciinema.org/a/0MukBawEguEcxU7kAgfDIe6tU" target="_blank"><img src="https://asciinema.org/a/0MukBawEguEcxU7kAgfDIe6tU.svg" /></a>
+### PHP
+PHP 8.1
 
-game-calc 
-<a href="https://asciinema.org/a/H9gyW0hlXbuDICNZJbKs9SZ3V" target="_blank"><img src="https://asciinema.org/a/H9gyW0hlXbuDICNZJbKs9SZ3V.svg" /></a>
+### Install
+>$ git clone https://github.com/affonja/php-project-45.git
 
-game-gcd
-<a href="https://asciinema.org/a/AWZfjuur35cIO5peXpCnogQA5" target="_blank"><img src="https://asciinema.org/a/AWZfjuur35cIO5peXpCnogQA5.svg" /></a>
+>$ cd php-project-45
 
-game-progression
-<a href="https://asciinema.org/a/cFmzIkT4Q0ihFxhUVu2yVJc9f" target="_blank"><img src="https://asciinema.org/a/cFmzIkT4Q0ihFxhUVu2yVJc9f.svg" /></a>
+>$ make install
 
-game-prime
-<a href="https://asciinema.org/a/y3ZNjBscHwUK7v0ydlQokYUJz" target="_blank"><img src="https://asciinema.org/a/y3ZNjBscHwUK7v0ydlQokYUJz.svg" /></a>
+### asciinema
+
+[game-even](https://asciinema.org/a/Q9F6LN7Z3NQqJhkX51lXw6BWn)
+
+[game-calc](https://asciinema.org/a/oQzYVvZzubhTXIHImwJ55fNJV)
+
+[game-gcd](https://asciinema.org/a/kddVpT02xQIqhuAzTM2gas0Nv)
+
+[game-progression](https://asciinema.org/a/IUgeoYDHRfP3gp9ubCFWUMqoc)
+
+[game-prime](https://asciinema.org/a/hWYJONj2VX6K97SJ8SfTC7Mbr)
+
