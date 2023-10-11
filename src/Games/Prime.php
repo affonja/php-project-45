@@ -9,7 +9,9 @@ use function BrainGames\Engine\validate_answer;
 use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\welcome;
+
 use const BrainGames\Engine\ROUND;
+
 function game_prime($name): void
 {
     $count_answer = 0;

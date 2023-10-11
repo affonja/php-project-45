@@ -3,12 +3,12 @@
 namespace BrainGames\Progression;
 
 use function cli\line;
-use function cli\prompt;
-use function BrainGames\Engine\welcome;
 use function BrainGames\Engine\get_number;
 use function BrainGames\Engine\game_round;
 use function BrainGames\Engine\validate_answer;
+
 use const BrainGames\Engine\ROUND;
+
 function game_progr($name): void
 {
     $count_answer = 0;
