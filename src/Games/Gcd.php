@@ -11,8 +11,6 @@ use function BrainGames\Engine\game_round;
 use function BrainGames\Engine\validate_answer;
 use const BrainGames\Engine\ROUND;
 use function BrainGames\Engine\get_action;
-
-
 function game_gcd($name): void
 {
     $count_answer = 0;
