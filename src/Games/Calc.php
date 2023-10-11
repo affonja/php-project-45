@@ -18,12 +18,12 @@ function game_calc($name): void
     line('What is the result of the expression?');
 
     while ($count_answer < ROUND) {
-        $number1 = get_number(0,100);
-        $number2 = get_number(0,100);
-        $action  = get_action();
+        $number1 = get_number(0, 100);
+        $number2 = get_number(0, 100);
+        $action = get_action();
 
-        $math_string = $number1.' '.$action.' '.$number2;
-        eval('$true_answer = ' . $math_string .';');
+        $math_string = $number1 . ' ' . $action . ' ' . $number2;
+        eval('$true_answer = ' . $math_string . ';');
         $user_answer = game_round($math_string);
         validate_answer($true_answer, $user_answer, $name);
         line('Correct!');

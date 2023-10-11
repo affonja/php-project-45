@@ -19,8 +19,8 @@ function game_gcd($name): void
     line('Find the greatest common divisor of given numbers.');
 
     while ($count_answer < ROUND) {
-        $number1 = get_number(1,100);
-        $number2 = get_number(1,100);
+        $number1 = get_number(1, 100);
+        $number2 = get_number(1, 100);
 
         $true_answer = get_gcd($number1, $number2);
         $user_answer = game_round($number1 . ' ' . $number2);
@@ -37,6 +37,6 @@ function get_gcd(int $number1, int $number2)
     $dividers_for_number1 = get_dividers($number1);
     $dividers_for_number2 = get_dividers($number2);
 
-    $dividers_general = array_intersect($dividers_for_number1,$dividers_for_number2);
+    $dividers_general = array_intersect($dividers_for_number1, $dividers_for_number2);
     return array_pop($dividers_general);
 }
