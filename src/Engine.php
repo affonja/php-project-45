@@ -23,7 +23,7 @@ function get_number(int $min, int $max): int
 
 function game_round(string $args): string
 {
-    line('Question: ' . $args);
+    line("Question: $args");
     $answer = prompt('Your answer: ');
 
     return $answer;

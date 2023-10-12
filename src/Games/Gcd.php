@@ -20,7 +20,7 @@ function game_gcd(string $name): void
         $number2 = get_number(1, 100);
 
         $true_answer = get_gcd($number1, $number2);
-        $user_answer = game_round($number1 . ' ' . $number2);
+        $user_answer = game_round("$number1 $number2");
         validate_answer($true_answer, $user_answer, $name);
         line('Correct!');
         $count_answer++;

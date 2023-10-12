@@ -16,7 +16,7 @@ function game_progr(string $name): void
 
     while ($count_answer < ROUND) {
         $number_first = get_number(0, 100);
-        $progressive_step = get_number(0, 10);
+        $progressive_step = get_number(1, 10);
         $progressive_length = get_number(5, rand(5, 25));
         $progressive = [$number_first];
 

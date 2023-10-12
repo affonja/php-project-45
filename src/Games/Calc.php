@@ -21,8 +21,9 @@ function game_calc(string $name): void
         $number2 = get_number(0, 100);
         $action = get_action();
 
-        $math_string = $number1 . ' ' . $action . ' ' . $number2;
-        eval('$true_answer = ' . $math_string . ';');
+        $math_string = "$number1 $action $number2";
+        eval("\$true_answer = $math_string;");
+
         $user_answer = game_round($math_string);
         validate_answer($true_answer, $user_answer, $name);
         line('Correct!');
