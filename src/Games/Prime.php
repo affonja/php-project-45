@@ -12,7 +12,7 @@ use function BrainGames\Engine\welcome;
 
 use const BrainGames\Engine\ROUND;
 
-function game_prime($name): void
+function game_prime(string $name): void
 {
     $count_answer = 0;
     line('Answer "yes" if given number is prime. Otherwise answer "no".');

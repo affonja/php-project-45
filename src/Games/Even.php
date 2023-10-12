@@ -11,7 +11,7 @@ use function BrainGames\Engine\validate_answer;
 
 use const BrainGames\Engine\ROUND;
 
-function game_even($name): void
+function game_even(string $name): void
 {
     $count_answer = 0;
 

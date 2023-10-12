@@ -10,7 +10,7 @@ use function BrainGames\Engine\validate_answer;
 
 use const BrainGames\Engine\ROUND;
 
-function game_gcd($name): void
+function game_gcd(string $name): void
 {
     $count_answer = 0;
     line('Find the greatest common divisor of given numbers.');

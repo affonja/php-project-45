@@ -10,10 +10,11 @@ use function BrainGames\Engine\get_action;
 
 use const BrainGames\Engine\ROUND;
 
-function game_calc($name): void
+function game_calc(string $name): void
 {
     $count_answer = 0;
     line('What is the result of the expression?');
+    $true_answer = '';
 
     while ($count_answer < ROUND) {
         $number1 = get_number(0, 100);

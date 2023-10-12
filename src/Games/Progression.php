@@ -9,7 +9,7 @@ use function BrainGames\Engine\validate_answer;
 
 use const BrainGames\Engine\ROUND;
 
-function game_progr($name): void
+function game_progr(string $name): void
 {
     $count_answer = 0;
     line('What number is missing in the progression?');

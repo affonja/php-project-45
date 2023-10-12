@@ -16,12 +16,12 @@ function welcome(): string
     return $name;
 }
 
-function get_number($min, $max): int
+function get_number(int $min, int $max): int
 {
     return rand($min, $max);
 }
 
-function game_round($args): string
+function game_round(string $args): string
 {
     line('Question: ' . $args);
     $answer = prompt('Your answer: ');
@@ -29,7 +29,7 @@ function game_round($args): string
     return $answer;
 }
 
-function validate_answer($true_answer, $user_answer, $name): void
+function validate_answer(string $true_answer, string $user_answer, string $name): void
 {
     if ($user_answer != $true_answer) {
         line("'$user_answer' is wrong answer ;(. Correct answer was '$true_answer'.");
@@ -45,7 +45,7 @@ function get_action(): string
     return $action_list[$random];
 }
 
-function get_dividers($number): array
+function get_dividers(int $number): array
 {
     $min_divider = 1;
     $dividers = [];
