@@ -30,7 +30,7 @@ function game_progr(string $name): void
         $progressive[$hint_el] = '..';
 
         $user_answer = game_round(implode(' ', $progressive));
-        validate_answer($true_answer, $user_answer, $name);
+        validate_answer((string) $true_answer, $user_answer, $name);
         line('Correct!');
         $count_answer++;
     }

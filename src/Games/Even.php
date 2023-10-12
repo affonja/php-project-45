@@ -20,7 +20,7 @@ function game_even(string $name): void
     while ($count_answer < ROUND) {
         $number = get_number(0, 100);
         $true_answer = ($number % 2) === 0 ? 'yes' : 'no';
-        $user_answer = game_round($number);
+        $user_answer = game_round((string) $number);
         validate_answer($true_answer, $user_answer, $name);
         line('Correct!');
         $count_answer++;

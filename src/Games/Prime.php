@@ -21,7 +21,7 @@ function game_prime(string $name): void
         $number = get_number(2, 100);
         $dividers = get_dividers($number);
         $true_answer = count($dividers) > 2 ? 'no' : 'yes';
-        $user_answer = game_round($number);
+        $user_answer = game_round((string) $number);
         validate_answer($true_answer, $user_answer, $name);
         line('Correct!');
         $count_answer++;
