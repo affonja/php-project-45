@@ -14,4 +14,4 @@ use function BrainGames\Engine\welcome;
 use function BrainGames\Progression\game_progr;
 
 $name = welcome();
-game_progr($name);
+gameProgr($name);

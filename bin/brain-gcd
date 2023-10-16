@@ -11,7 +11,7 @@ if (file_exists($autoloadPath1)) {
 }
 
 use function BrainGames\Engine\welcome;
-use function BrainGames\Gcd\game_gcd;
+use function BrainGames\Gcd\gameGcd;
 
 $name = welcome();
-game_gcd($name);
+gameGcd($name);

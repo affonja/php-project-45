@@ -3,29 +3,33 @@
 namespace BrainGames\Calc;
 
 use function cli\line;
-use function BrainGames\Engine\get_number;
-use function BrainGames\Engine\game_round;
-use function BrainGames\Engine\validate_answer;
-use function BrainGames\Engine\get_action;
+use function BrainGames\Engine\getNumber;
+use function BrainGames\Engine\gameRound;
+use function BrainGames\Engine\validateAnswer;
+use function BrainGames\Engine\getAction;
 
 use const BrainGames\Engine\ROUND;
 
-function game_calc(string $name): void
+function gameCalc(string $name): void
 {
     $count_answer = 0;
     line('What is the result of the expression?');
     $true_answer = '';
 
     while ($count_answer < ROUND) {
-        $number1 = get_number(0, 100);
-        $number2 = get_number(0, 100);
-        $action = get_action();
+        $number1 = getNumber(0, 100);
+        $number2 = getNumber(0, 100);
+        $action = getAction();
 
         $math_string = "$number1 $action $number2";
-        eval("\$true_answer = $math_string;");
+        $true_answer = match ($action) {
+            '+' => $number1 + $number2,
+            '-' => $number1 - $number2,
+            '*' => $number1 * $number2,
+        };
 
-        $user_answer = game_round($math_string);
-        validate_answer($true_answer, $user_answer, $name);
+        $user_answer = gameRound($math_string);
+        validateAnswer($true_answer, $user_answer, $name);
         line('Correct!');
         $count_answer++;
     }

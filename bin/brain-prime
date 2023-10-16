@@ -11,7 +11,7 @@ if (file_exists($autoloadPath1)) {
 }
 
 use function BrainGames\Engine\welcome;
-use function BrainGames\Prime\game_prime;
+use function BrainGames\Prime\gamePrime;
 
 $name = welcome();
-game_prime($name);
+gamePrime($name);
