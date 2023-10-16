@@ -2,7 +2,6 @@
 
 namespace BrainGames\Engine;
 
-
 use function BrainGames\Gcd\getGcd;
 use function cli\line;
 use function cli\prompt;

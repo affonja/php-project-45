@@ -2,7 +2,6 @@
 
 namespace BrainGames\Progression;
 
-use function cli\line;
 use function BrainGames\Engine\getNumber;
 
 function progression(): array
@@ -28,4 +27,3 @@ function progression(): array
         'expression' => $expression,
     ];
 }
-
