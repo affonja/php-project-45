@@ -10,8 +10,6 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-use function BrainGames\Engine\welcome;
-use function BrainGames\Calc\game_calc;
+use function BrainGames\Engine\runGame;
 
-$name = welcome();
-game_calc($name);
+runGame('calc');

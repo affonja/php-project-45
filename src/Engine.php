@@ -2,16 +2,27 @@
 
 namespace BrainGames\Engine;
 
+
+use function BrainGames\Gcd\getGcd;
 use function cli\line;
 use function cli\prompt;
 
 const ROUND = 3;
+const MESSAGES =
+[
+    'calc' => 'What is the result of the expression?',
+    'even' => 'Answer "yes" if the number is even, otherwise answer "no".',
+    'gcd' => 'Find the greatest common divisor of given numbers.',
+    'prime' => 'Answer "yes" if given number is prime. Otherwise answer "no".',
+    'progression' => 'What number is missing in the progression?',
+];
 
-function welcome(): string
+function welcome(string $game_name): string
 {
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
+    line(MESSAGES[$game_name]);
 
     return $name;
 }
@@ -57,4 +68,36 @@ function getDividers(int $number): array
     }
 
     return $dividers;
+}
+
+function runGame(string $game_name): void
+{
+    $name = welcome($game_name);
+    $count_answer = 0;
+
+    while ($count_answer < ROUND) {
+        $game_param = call_user_func("BrainGames\\$game_name\\$game_name");
+
+        $true_answer = getTrueAnswer($game_name, $game_param);
+        $user_answer = gameRound((string)$game_param['expression']);
+        validateAnswer((string)$true_answer, $user_answer, $name);
+        line('Correct!');
+        $count_answer++;
+    }
+    line("Congratulations, $name!");
+}
+
+function getTrueAnswer(string $game, array $param)
+{
+    return match ($game) {
+        'even' => ($param['number'] % 2) === 0 ? 'yes' : 'no',
+        'calc' => match ($param['action']) {
+            '+' => $param['number1'] + $param['number2'],
+            '-' => $param['number1'] - $param['number2'],
+            '*' => $param['number1'] * $param['number2'],
+        },
+        'gcd' => getGcd($param['number1'], $param['number2']),
+        'prime' => count($param['dividers']) > 2 ? 'no' : 'yes',
+        'progression' => $param['hid'],
+    };
 }
