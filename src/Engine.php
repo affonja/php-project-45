@@ -86,7 +86,7 @@ function runGame(string $game_name): void
     line("Congratulations, $name!");
 }
 
-function getTrueAnswer(mixed $game, mixed $param)
+function getTrueAnswer(mixed $game, mixed $param): mixed
 {
     return match ($game) {
         'even' => ($param['number'] % 2) === 0 ? 'yes' : 'no',
