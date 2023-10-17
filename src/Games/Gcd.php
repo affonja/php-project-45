@@ -16,8 +16,8 @@ function getGcd(int $number1, int $number2)
 
 function gcd(): array
 {
-    $number1 = getNumber(0, 100);
-    $number2 = getNumber(0, 100);
+    $number1 = getNumber(1, 100);
+    $number2 = getNumber(1, 100);
     $expression = "$number1 $number2";
 
     return [
