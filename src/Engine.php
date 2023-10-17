@@ -75,8 +75,8 @@ function runGame(string $game_name): void
     $count_answer = 0;
 
     while ($count_answer < ROUND) {
-        $game_param = call_user_func("BrainGames\\$game_name\\$game_name");
-
+        $function = "BrainGames\\$game_name\\$game_name";
+        $game_param = $function();
         $true_answer = getTrueAnswer($game_name, $game_param);
         $user_answer = gameRound((string)$game_param['expression']);
         validateAnswer((string)$true_answer, $user_answer, $name);
