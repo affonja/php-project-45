@@ -76,7 +76,7 @@ function runGame(string $game_name): void
 
     while ($count_answer < ROUND) {
         $function = "BrainGames\\$game_name\\$game_name";
-        $game_param = $function();
+        !is_callable($function) ?: $game_param = $function();
         $true_answer = getTrueAnswer($game_name, $game_param);
         $user_answer = gameRound((string)$game_param['expression']);
         validateAnswer((string)$true_answer, $user_answer, $name);
@@ -86,7 +86,7 @@ function runGame(string $game_name): void
     line("Congratulations, $name!");
 }
 
-function getTrueAnswer(mixed $game, mixed $param): mixed
+function getTrueAnswer(string $game, array $param): mixed
 {
     return match ($game) {
         'even' => ($param['number'] % 2) === 0 ? 'yes' : 'no',
