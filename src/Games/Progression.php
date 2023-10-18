@@ -3,8 +3,14 @@
 namespace BrainGames\Progression;
 
 use function BrainGames\Engine\getNumber;
+use function BrainGames\Engine\runGame;
 
-function progression(): array
+function progression(): void
+{
+    runGame('What number is missing in the progression?', 'progression');
+}
+
+function getParam(): array
 {
     $number_first = getNumber(0, 100);
     $progressive_step = getNumber(1, 10);
@@ -25,5 +31,6 @@ function progression(): array
     return [
         'hid' => (string)$true_answer,
         'expression' => $expression,
+        'true_answer' => $true_answer
     ];
 }
