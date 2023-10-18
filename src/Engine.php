@@ -93,10 +93,11 @@ function getTrueAnswer(string $game, array $param): mixed
             '+' => $param['number1'] + $param['number2'],
             '-' => $param['number1'] - $param['number2'],
             '*' => $param['number1'] * $param['number2'],
+            default => 'Unknown game_param',
         },
         'gcd' => getGcd($param['number1'], $param['number2']),
         'prime' => count($param['dividers']) > 2 ? 'no' : 'yes',
         'progression' => $param['hid'],
-        default => throw new Error(`Unknown game_param: '{$param}'!`)
+        default => 'Unknown game_param',
     };
 }
