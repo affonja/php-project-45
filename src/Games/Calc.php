@@ -3,7 +3,6 @@
 namespace BrainGames\Calc;
 
 use function BrainGames\Engine\getNumber;
-use function BrainGames\Engine\getAction;
 use function BrainGames\Engine\runGame;
 
 function calc(): void
@@ -31,4 +30,12 @@ function getParam(): array
         'expression' => $expression,
         'true_answer' => $true_answer
     ];
+}
+
+function getAction(): string
+{
+    $action_list = ['+', '-', '*'];
+    $random = rand(0, 2);
+
+    return $action_list[$random];
 }
