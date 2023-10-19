@@ -41,14 +41,6 @@ function validateAnswer(string $true_answer, string $user_answer, string $name):
     }
 }
 
-function getAction(): string
-{
-    $action_list = ['+', '-', '*'];
-    $random = rand(0, 2);
-
-    return $action_list[$random];
-}
-
 function getDividers(int $number): array
 {
     $min_divider = 1;
