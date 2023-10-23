@@ -20,13 +20,10 @@ function getParam(): array
         '+' => $number1 + $number2,
         '-' => $number1 - $number2,
         '*' => $number1 * $number2,
-        default => 'Unknown game_param',
+        default => throw new \Exception('Unknown game_param')
     };
 
     return [
-        'number1' => $number1,
-        'number2' => $number2,
-        'action' => $action,
         'expression' => $expression,
         'true_answer' => $true_answer
     ];

@@ -13,20 +13,18 @@ function progression(): void
 function getParam(): array
 {
     $number_first = getNumber(0, 100);
-    $progressive_step = getNumber(1, 10);
-    $progressive_length = getNumber(5, rand(5, 25));
-    $progressive = [$number_first];
+    $progression_step = getNumber(1, 10);
+    $progression_length = getNumber(5, rand(5, 25));
+    $progression = [$number_first];
 
-    for ($i = 0; $i < $progressive_length - 1; $i++) {
-        $progressive[] = $number_first + $progressive_step;
-        $number_first = $progressive[$i + 1];
+    for ($i = 1; $i < $progression_length; $i++) {
+        $progression[] = $number_first + $progression_step * $i;
     }
+    $hidden_element = rand(0, $progression_length - 1);
+    $true_answer = $progression[$hidden_element];
+    $progression[$hidden_element] = '..';
 
-    $hint_el = rand(0, $progressive_length - 1);
-    $true_answer = $progressive[$hint_el];
-    $progressive[$hint_el] = '..';
-
-    $expression = implode(' ', $progressive);
+    $expression = implode(' ', $progression);
 
     return [
         'hid' => (string)$true_answer,

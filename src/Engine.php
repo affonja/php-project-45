@@ -2,8 +2,6 @@
 
 namespace BrainGames\Engine;
 
-use function BrainGames\Calc\calc;
-use function BrainGames\Gcd\getGcd;
 use function cli\line;
 use function cli\prompt;
 
@@ -32,13 +30,14 @@ function gameRound(string $args): string
     return $answer;
 }
 
-function validateAnswer(string $true_answer, string $user_answer, string $name): void
+function validateAnswer(string $true_answer, string $user_answer, string $name): bool
 {
     if ($user_answer != $true_answer) {
         line("'$user_answer' is wrong answer ;(. Correct answer was '$true_answer'.");
         line("Let's try again, $name!");
-        die();
+        return false;
     }
+    return true;
 }
 
 function getDividers(int $number): array
@@ -55,19 +54,30 @@ function getDividers(int $number): array
     return $dividers;
 }
 
-function runGame(string $phrase, string $game_name): void
+function runGame(string $phrase, string $game_name): bool
 {
     $name = welcome($phrase);
     $count_answer = 0;
 
     while ($count_answer < ROUND) {
-        $function = "\\BrainGames\\$game_name\\getParam";
-        is_callable($function) ? $game_param = $function() : die();
+        $game_param = match ($game_name) {
+            'calc' => \BrainGames\Calc\getParam(),
+            'even' => \BrainGames\Even\getParam(),
+            'gcd' => \BrainGames\Gcd\getParam(),
+            'prime' => \BrainGames\Prime\getParam(),
+            'progression' => \BrainGames\Progression\getParam(),
+            default => throw new \Exception('Unknown game')
+        };
         $true_answer = $game_param['true_answer'];
         $user_answer = gameRound((string)$game_param['expression']);
-        validateAnswer((string)$true_answer, $user_answer, $name);
-        line('Correct!');
-        $count_answer++;
+        $is_valid_answer = validateAnswer((string)$true_answer, $user_answer, $name);
+        if ($is_valid_answer) {
+            line('Correct!');
+            $count_answer++;
+        } else {
+            return false;
+        }
     }
     line("Congratulations, $name!");
+    return true;
 }
