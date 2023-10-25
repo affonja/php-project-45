@@ -8,7 +8,7 @@ use function BrainGames\Engine\runGame;
 
 function gcd(): void
 {
-    runGame('Find the greatest common divisor of given numbers.', 'gcd');
+    runGame('Find the greatest common divisor of given numbers.', '\BrainGames\Gcd\getParam');
 }
 
 function getParam(): array

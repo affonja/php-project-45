@@ -7,7 +7,7 @@ use function BrainGames\Engine\runGame;
 
 function calc(): void
 {
-    runGame('What is the result of the expression?', 'calc');
+    runGame('What is the result of the expression?', "\BrainGames\Calc\getParam");
 }
 
 function getParam(): array

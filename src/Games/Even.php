@@ -7,7 +7,7 @@ use function BrainGames\Engine\runGame;
 
 function even(): void
 {
-    runGame('Answer "yes" if the number is even, otherwise answer "no".', 'even');
+    runGame('Answer "yes" if the number is even, otherwise answer "no".', '\BrainGames\Even\getParam');
 }
 
 function getParam(): array

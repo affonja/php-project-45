@@ -8,7 +8,7 @@ use function BrainGames\Engine\runGame;
 
 function prime(): void
 {
-    runGame('Answer "yes" if given number is prime. Otherwise answer "no".', 'prime');
+    runGame('Answer "yes" if given number is prime. Otherwise answer "no".', '\BrainGames\Prime\getParam');
 }
 
 function getParam(): array

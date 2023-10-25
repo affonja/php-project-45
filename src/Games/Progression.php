@@ -7,7 +7,7 @@ use function BrainGames\Engine\runGame;
 
 function progression(): void
 {
-    runGame('What number is missing in the progression?', 'progression');
+    runGame('What number is missing in the progression?', '\BrainGames\Progression\getParam');
 }
 
 function getParam(): array
@@ -15,9 +15,9 @@ function getParam(): array
     $number_first = getNumber(0, 100);
     $progression_step = getNumber(1, 10);
     $progression_length = getNumber(5, rand(5, 25));
-    $progression = [$number_first];
+    $progression = [];
 
-    for ($i = 1; $i < $progression_length; $i++) {
+    for ($i = 0; $i < $progression_length; $i++) {
         $progression[] = $number_first + $progression_step * $i;
     }
     $hidden_element = rand(0, $progression_length - 1);
