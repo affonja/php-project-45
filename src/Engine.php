@@ -54,13 +54,13 @@ function getDividers(int $number): array
     return $dividers;
 }
 
-function runGame(string $phrase, string $function): bool
+function runGame(string $phrase, callable $function): bool
 {
     $name = welcome($phrase);
     $count_answer = 0;
 
     while ($count_answer < ROUND) {
-        $game_param = $function();
+        is_callable($function) ? $game_param = $function() : throw new \Exception('Unknown game_param');
         $true_answer = $game_param['true_answer'];
         $user_answer = gameRound((string)$game_param['expression']);
         $is_valid_answer = validateAnswer((string)$true_answer, $user_answer, $name);
