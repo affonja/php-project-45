@@ -60,7 +60,7 @@ function runGame(string $phrase, callable $function): bool
     $count_answer = 0;
 
     while ($count_answer < ROUND) {
-        is_callable($function) ? $game_param = $function() : throw new \Exception('Unknown game_param');
+        $game_param = $function();
         $true_answer = $game_param['true_answer'];
         $user_answer = gameRound((string)$game_param['expression']);
         $is_valid_answer = validateAnswer((string)$true_answer, $user_answer, $name);
