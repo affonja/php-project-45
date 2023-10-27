@@ -14,13 +14,17 @@ function prime(): void
 function getParam(): array
 {
     $number = getNumber(2, 100);
-    $dividers = getDividers($number);
     $expression = "$number";
-    $true_answer = count($dividers) > 2 ? 'no' : 'yes';
+    $true_answer = getTrueAnswer($number);
 
     return [
-        'dividers' => $dividers,
         'expression' => $expression,
         'true_answer' => $true_answer
     ];
+}
+
+function getTrueAnswer(int $number): string
+{
+    $dividers = getDividers($number);
+    return count($dividers) > 2 ? 'no' : 'yes';
 }
