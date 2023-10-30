@@ -1,13 +1,14 @@
 <?php
 
-namespace BrainGames\Progression;
+namespace BrainGames\Games\Progression;
 
 use function BrainGames\Engine\getNumber;
 use function BrainGames\Engine\runGame;
 
-function progression(): void
+const GAME_DESCRIPTION = 'What number is missing in the progression?';
+function start(): void
 {
-    runGame('What number is missing in the progression?', '\BrainGames\Progression\getParam');
+    runGame(GAME_DESCRIPTION, '\BrainGames\Games\Progression\getParam');
 }
 
 function getParam(): array
@@ -27,7 +28,6 @@ function getParam(): array
     $expression = implode(' ', $progression);
 
     return [
-        'hid' => (string)$true_answer,
         'expression' => $expression,
         'true_answer' => $true_answer
     ];

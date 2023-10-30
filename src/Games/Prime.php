@@ -1,21 +1,22 @@
 <?php
 
-namespace BrainGames\Prime;
+namespace BrainGames\Games\Prime;
 
 use function BrainGames\Engine\getDividers;
 use function BrainGames\Engine\getNumber;
 use function BrainGames\Engine\runGame;
 
-function prime(): void
+const GAME_DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+function start(): void
 {
-    runGame('Answer "yes" if given number is prime. Otherwise answer "no".', '\BrainGames\Prime\getParam');
+    runGame(GAME_DESCRIPTION, '\BrainGames\Games\Prime\getParam');
 }
 
 function getParam(): array
 {
     $number = getNumber(2, 100);
     $expression = "$number";
-    $true_answer = getTrueAnswer($number);
+    $true_answer = getPrime($number) ? 'no' : 'yes';
 
     return [
         'expression' => $expression,
@@ -23,8 +24,8 @@ function getParam(): array
     ];
 }
 
-function getTrueAnswer(int $number): string
+function getPrime(int $number): bool
 {
     $dividers = getDividers($number);
-    return count($dividers) > 2 ? 'no' : 'yes';
+    return count($dividers) > 2;
 }

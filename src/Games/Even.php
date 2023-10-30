@@ -1,13 +1,14 @@
 <?php
 
-namespace BrainGames\Even;
+namespace BrainGames\Games\Even;
 
 use function BrainGames\Engine\getNumber;
 use function BrainGames\Engine\runGame;
 
-function even(): void
+const GAME_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
+function start(): void
 {
-    runGame('Answer "yes" if the number is even, otherwise answer "no".', '\BrainGames\Even\getParam');
+    runGame(GAME_DESCRIPTION, '\BrainGames\Games\Even\getParam');
 }
 
 function getParam(): array
@@ -17,7 +18,6 @@ function getParam(): array
     $true_answer = ($number % 2) === 0 ? 'yes' : 'no';
 
     return [
-        'number' => $number,
         'expression' => $expression,
         'true_answer' => $true_answer
     ];

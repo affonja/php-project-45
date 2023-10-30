@@ -1,13 +1,14 @@
 <?php
 
-namespace BrainGames\Calc;
+namespace BrainGames\Games\Calc;
 
 use function BrainGames\Engine\getNumber;
 use function BrainGames\Engine\runGame;
 
-function calc(): void
+const GAME_DESCRIPTION = 'What is the result of the expression?';
+function start(): void
 {
-    runGame('What is the result of the expression?', "\BrainGames\Calc\getParam");
+    runGame(GAME_DESCRIPTION, "\BrainGames\Games\Calc\getParam");
 }
 
 function getParam(): array

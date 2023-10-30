@@ -57,9 +57,8 @@ function getDividers(int $number): array
 function runGame(string $phrase, callable $function): bool
 {
     $name = welcome($phrase);
-    $count_answer = 0;
 
-    while ($count_answer < ROUND) {
+    for ($count_answer = 0; $count_answer < ROUND; $count_answer++) {
         $game_param = $function();
         $true_answer = $game_param['true_answer'];
         $user_answer = gameRound((string)$game_param['expression']);
@@ -68,7 +67,6 @@ function runGame(string $phrase, callable $function): bool
             return false;
         }
         line('Correct!');
-        $count_answer++;
     }
     line("Congratulations, $name!");
     return true;

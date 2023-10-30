@@ -1,14 +1,15 @@
 <?php
 
-namespace BrainGames\Gcd;
+namespace BrainGames\Games\Gcd;
 
 use function BrainGames\Engine\getDividers;
 use function BrainGames\Engine\getNumber;
 use function BrainGames\Engine\runGame;
 
-function gcd(): void
+const GAME_DESCRIPTION = 'Find the greatest common divisor of given numbers.';
+function start(): void
 {
-    runGame('Find the greatest common divisor of given numbers.', '\BrainGames\Gcd\getParam');
+    runGame(GAME_DESCRIPTION, '\BrainGames\Games\Gcd\getParam');
 }
 
 function getParam(): array
@@ -19,8 +20,6 @@ function getParam(): array
     $true_answer = getGcd($number1, $number2);
 
     return [
-        'number1' => $number1,
-        'number2' => $number2,
         'expression' => $expression,
         'true_answer' => $true_answer
     ];
